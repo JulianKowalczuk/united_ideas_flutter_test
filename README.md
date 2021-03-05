@@ -4,6 +4,9 @@ A new Flutter project.
 
 ## Additional steps to run app
 
+### Setup .env file
+Copy .env.example to .env and set envs there
+
 ### Set network policy to allow plaintext connections (should be only used for debugging)
 
 https://flutter.dev/docs/release/breaking-changes/network-policy-ios-android#allowing-cleartext-connection-for-debug-builds
