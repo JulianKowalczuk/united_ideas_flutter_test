@@ -8,6 +8,8 @@ import 'package:dio/dio.dart';
 import 'package:united_ideas_flutter_test/screens/CityWeatherScreen.dart';
 import 'package:united_ideas_flutter_test/services/OpenWeatherService.dart';
 
+var suggestionsToStoreMaxCount = 10;
+
 class SearchCityScreen extends HookWidget {
   const SearchCityScreen();
 
@@ -74,7 +76,10 @@ class SearchCityScreen extends HookWidget {
 
                               await box.put(
                                 'searchCityScreenCities',
-                                {...cities, weatherInfo.name}.toList(),
+                                {...cities, weatherInfo.name}
+                                    .toList()
+                                    .take(suggestionsToStoreMaxCount)
+                                    .toList(),
                               );
 
                               await Navigator.push(
